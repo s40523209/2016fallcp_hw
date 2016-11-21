@@ -125,35 +125,7 @@ ctx.fillStyle = 'black'
 ctx.strokeStyle = "black"
 ctx.font = "30px Arial"
 ctx.fillText("AMajor", 100, 70)
-ctx.arc(50, 50, 9, 0, 2*math.pi, False)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
 
-ctx.beginPath()
-ctx.fillStyle = 'white'
-ctx.font = "16px Arial"
-ctx.fillText("1", 45, 55)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-# 3
-ctx.beginPath()
-ctx.fillStyle = 'black'
-ctx.strokeStyle = "black"
-ctx.arc(50, 80, 9, 0, 2*math.pi, False)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-ctx.beginPath()
-ctx.fillStyle = 'white'
-ctx.font = "16px Arial"
-ctx.fillText("3", 45, 85)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
 
 
 

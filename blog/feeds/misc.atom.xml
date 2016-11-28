@@ -611,9 +611,10 @@ ctx.stroke()
 ctx.closePath()
 &lt;/script&gt;
 
-&lt;p&gt;上述
-&lt;pre class="brush:python"&gt;
-&lt;!-- 以下實際利用  Brython 畫圖 --&gt;&lt;/p&gt;
+&lt;p&gt;將繪圖內容納入 def 函式定義格式後:&lt;/p&gt;
+
+&lt;pre class="brush: python"&gt;
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
 &lt;canvas id="chord1" width="600" height="450"&gt;&lt;/canvas&gt;
 
 &lt;script type="text/python3"&gt;

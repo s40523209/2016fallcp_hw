@@ -207,7 +207,7 @@ ctx.strokeStyle = "black"
 ctx.stroke()
 ctx.closePath()
 ctx.beginPath()
-ctx.arc(340, 90, 5, 0, 2*math.pi, False)
+ctx.arc(350, 90, 5, 0, 2*math.pi, False)
 ctx.lineWidth =3
 ctx.strokeStyle = "black"
 ctx.stroke()
@@ -611,19 +611,15 @@ ctx.stroke()
 ctx.closePath()
 &lt;/script&gt;
 
-&lt;p&gt;將繪圖內容納入 def 函式定義格式後:&lt;/p&gt;
+&lt;p&gt;上述:&lt;/p&gt;
 
 &lt;pre class="brush: python"&gt;
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-
-
 &lt;script type="text/javascript" 
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
 &lt;/script&gt;
 
 &lt;!-- 啟動 Brython --&gt;
-
 &lt;script&gt;
 window.onload=function(){
 brython(1);
@@ -819,7 +815,7 @@ ctx.strokeStyle = "black"
 ctx.stroke()
 ctx.closePath()
 ctx.beginPath()
-ctx.arc(340, 90, 5, 0, 2*math.pi, False)
+ctx.arc(350, 90, 5, 0, 2*math.pi, False)
 ctx.lineWidth =3
 ctx.strokeStyle = "black"
 ctx.stroke()

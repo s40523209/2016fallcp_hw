@@ -1205,7 +1205,8 @@ ctx.lineWidth =3
 ctx.strokeStyle = "black"
 ctx.stroke()
 ctx.closePath()
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>W10</title><link href="./w10.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w10.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+&lt;/script&gt;
+&lt;/pre&gt;</summary><category term="使用導引"></category></entry><entry><title>W10</title><link href="./w10.html" rel="alternate"></link><published>2016-11-14T12:00:00+08:00</published><updated>2016-11-14T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-11-14:./w10.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
 
 
 &lt;p&gt;畫線練習&lt;/p&gt;

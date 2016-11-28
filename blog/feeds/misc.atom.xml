@@ -614,6 +614,22 @@ ctx.closePath()
 &lt;p&gt;將繪圖內容納入 def 函式定義格式後:&lt;/p&gt;
 
 &lt;pre class="brush: python"&gt;
+&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
 &lt;!-- 以下實際利用  Brython 畫圖 --&gt;
 &lt;canvas id="chord1" width="600" height="450"&gt;&lt;/canvas&gt;
 

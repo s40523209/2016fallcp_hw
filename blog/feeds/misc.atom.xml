@@ -7,13 +7,29 @@
 &lt;p&gt;從 Leo Editor 的節點 @edit @path @button 的用法到 pelican 轉 .md 檔案成為 blog 網誌, 並加入 Brython 程式導入與執行的方法&lt;/p&gt;
 &lt;OL TYPE=1&gt;
 
-&lt;LI&gt;@edit-&gt;增新節點
+&lt;LI&gt;@settings-&gt;設定節點
+
+&lt;LI&gt;@edit-&gt;增新節點  
 
 &lt;LI&gt;@path-&gt;儲存路徑
 
 &lt;LI&gt;@button-&gt;按鈕
 
-&lt;a href="https://vimeo.com/195916522"&gt;&lt;img src="https://github.com/s40523209/2016fallcp_hw/blob/gh-pages/%E6%93%B71%E5%8F%96.png?raw=true" alt="W15" title="W15" border="100" width=" 1000px" height="500px"&gt;&lt;/a&gt;</summary><category term="每週練習"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
+&lt;LI&gt;移動節點
+
+ctrl+u 向上移動
+
+ctrl+d 向下移動
+
+ctrl+r 向右移動
+
+ctrl+l 向左移動
+
+ctrl+i 新增內容
+
+ctrl+b 執行內容
+
+&lt;a href="https://vimeo.com/195916522"&gt;&lt;img src="https://github.com/cow2166/9989/blob/master/%E6%93%B72%E5%8F%96.png?raw=true" alt="W15" title="W15" border="100" width=" 1000px" height="500px"&gt;&lt;/a&gt;</summary><category term="每週練習"></category></entry><entry><title>W14 練習</title><link href="./w14-lian-xi.html" rel="alternate"></link><published>2016-12-12T14:35:00+08:00</published><updated>2016-12-12T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-12:./w14-lian-xi.html</id><summary type="html">&lt;p&gt;以下為第十四週開始的城市練習,要利用 &lt;a href="http://mde.tw/2016fallcp/course/Python3Programs.txt"&gt;http://mde.tw/2016fallcp/course/Python3Programs.txt&lt;/a&gt; 要整理Brython 的用法.
 &lt;/p&gt;
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 

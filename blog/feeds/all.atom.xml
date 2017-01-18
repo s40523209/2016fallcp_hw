@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPB 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-01-09T14:35:00+08:00</updated><entry><title>2016fallcp 期末考週</title><link href="./2016fallcp-qi-mo-kao-zhou.html" rel="alternate"></link><published>2017-01-09T14:35:00+08:00</published><updated>2017-01-09T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2017-01-09:./2016fallcp-qi-mo-kao-zhou.html</id><summary type="html">&lt;h4&gt;2016fallcp 期末考周&lt;/h4&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>40523209目錄</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2017-01-09T14:35:00+08:00</updated><entry><title>2016fallcp 期末考週</title><link href="./2016fallcp-qi-mo-kao-zhou.html" rel="alternate"></link><published>2017-01-09T14:35:00+08:00</published><updated>2017-01-09T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2017-01-09:./2016fallcp-qi-mo-kao-zhou.html</id><summary type="html">&lt;h4&gt;2016fallcp 期末考週&lt;/h4&gt;
 
 
 
@@ -8,25 +8,10 @@
 &lt;p&gt;W15 週心得與程式範例:&lt;/p&gt;
 &lt;p&gt;其中各週心得請嵌入個人現場操作 vimeo 影片&lt;/p&gt;
 &lt;p&gt;以 pre 附上練習的範例執行,以及課程影片摘要&lt;/p&gt;
-&lt;h1&gt;W15影片內容&lt;/h1&gt;
-&lt;p&gt;整理14週影片跟程式範例使用&lt;/p&gt;
-&lt;iframe src="https://player.vimeo.com/video/198635771" width="640" height="347" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe src="https://player.vimeo.com/video/199986763" width="640" height="383" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="https://vimeo.com/198635771"&gt;2017-01-09_13-36-34&lt;/a&gt; from &lt;a href="https://vimeo.com/user58510993"&gt;cowwind&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://vimeo.com/199986763"&gt;期末影片&lt;/a&gt; from &lt;a href="https://vimeo.com/user58510993"&gt;40523209&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h1&gt;W16影片內容&lt;/h1&gt;
-&lt;p&gt;RoboDK的使用方法跟製作猜數字遊戲!!&lt;/p&gt;
-&lt;iframe src="https://player.vimeo.com/video/198636353" width="640" height="347" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href="https://vimeo.com/198636353"&gt;2017-01-09_13-51-36&lt;/a&gt; from &lt;a href="https://vimeo.com/user58510993"&gt;cowwind&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1&gt;W17影片內容&lt;/h1&gt;
-&lt;p&gt;&lt;img src="https://github.com/s40523209/2016fallcp_hw/blob/gh-pages/908.PNG?raw=true" alt="W17" title="W17" border="100" width=" 1000px" height="500px"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;iframe src="https://player.vimeo.com/video/198636767" width="640" height="347" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href="https://vimeo.com/198636767"&gt;2017-01-09_13-58-22&lt;/a&gt; from &lt;a href="https://vimeo.com/user58510993"&gt;cowwind&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre class="brush: python"&gt;
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
 
 &lt;script type="text/javascript" 
@@ -34,32 +19,1121 @@
 &lt;/script&gt;
 
 &lt;!-- 啟動 Brython --&gt;
+
 &lt;script&gt;
 window.onload=function(){
 brython(1);
 }
 &lt;/script&gt;
 
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
 
-&lt;div id ="ex1"&gt;&lt;/div&gt;
+&lt;canvas id="chord1" width="300" height="400"&gt;&lt;/canvas&gt;
+
 &lt;script type="text/python3"&gt;
 from browser import document as doc
-container = doc['ex1']
+import math
+# 準備繪圖畫布
+canvas = doc["chord1"]
+ctx = canvas.getContext("2d")
 
-container&lt;="W14練習"
+def HH(e):
+    ctx.fillStyle = "#ffd700"
+    ctx.fillRect(0, 0, 300, 400)
+
+    ctx.fillStyle = "white"
+    ctx.fillRect(1, 240, 298, 60)
+
+    ctx.fillStyle = "#cd853f"
+    ctx.fillRect(0, 300, 300, 100)
+
+
+    #右眼
+    ctx.beginPath()
+    ctx.fillStyle = 'white'
+    ctx.strokeStyle = "black"
+    ctx.arc(200, 100, 45, 0, 2*math.pi, False)
+
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #左眼
+    ctx.beginPath()
+    ctx.fillStyle = 'white'
+    ctx.strokeStyle = "black"
+
+    ctx.arc(100, 100, 45, 0, 2*math.pi, False)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #左邊眼白
+    ctx.beginPath()
+    ctx.fillStyle = 'blue'
+    ctx.strokeStyle = "black"
+
+    ctx.arc(110, 95, 20, 0, 2*math.pi, False)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #右邊眼白
+    ctx.beginPath()
+    ctx.fillStyle = 'blue'
+    ctx.strokeStyle = "black"
+    ctx.arc(190, 95, 20, 0, 2*math.pi, False)
+
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #左邊眼球
+    ctx.beginPath()
+    ctx.fillStyle = 'black'
+    ctx.strokeStyle = "black"
+
+    ctx.arc(110, 95, 10, 0, 2*math.pi, False)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #右邊眼球
+    ctx.beginPath()
+    ctx.fillStyle = 'black'
+    ctx.strokeStyle = "black"
+    ctx.arc(190, 95, 10, 0, 2*math.pi, False)
+
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #嘴巴
+    ctx.fillStyle = "black"
+    ctx.fillRect(75, 170, 150, 10)
+
+    #左邊牙齒
+    ctx.fillStyle = "white"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(150, 180, 25, 40)
+
+
+    #右邊牙齒
+    ctx.fillStyle = "white"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(120, 180, 25, 40)
+
+    #衣服裝飾
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(80, 330, 40, 10)
+
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(10, 330, 40, 10)
+
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(250, 330, 40, 10)
+
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(180, 330, 40, 10)
+
+
+
+def HHH(e):
+    ctx.fillStyle = "white"
+    ctx.fillRect(0, 0, 300, 400)
+
+doc["h"].bind("click", HH)
+doc["h1"].bind("click", HHH)
 &lt;/script&gt;
 
+&lt;p&gt;&lt;button id="h"&gt;Brython Canvas 繪圖&lt;/button&gt;
+&lt;button id="h1"&gt;刪除&lt;/button&gt;&lt;/p&gt;
+&lt;h4&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;p&gt;Brython Canvas 繪圖&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;canvas id="chord1" width="300" height="400"&gt;&lt;/canvas&gt;&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+import math
+# 準備繪圖畫布
+canvas = doc["chord1"]
+ctx = canvas.getContext("2d")
 
+def HH(e):
+    ctx.fillStyle = "#ffd700"
+    ctx.fillRect(0, 0, 300, 400)
+
+    ctx.fillStyle = "white"
+    ctx.fillRect(1, 240, 298, 60)
+
+    ctx.fillStyle = "#cd853f"
+    ctx.fillRect(0, 300, 300, 100)
+
+
+    #右眼
+    ctx.beginPath()
+    ctx.fillStyle = 'white'
+    ctx.strokeStyle = "black"
+    ctx.arc(200, 100, 45, 0, 2*math.pi, False)
+
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #左眼
+    ctx.beginPath()
+    ctx.fillStyle = 'white'
+    ctx.strokeStyle = "black"
+
+    ctx.arc(100, 100, 45, 0, 2*math.pi, False)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #左邊眼白
+    ctx.beginPath()
+    ctx.fillStyle = 'blue'
+    ctx.strokeStyle = "black"
+
+    ctx.arc(110, 95, 20, 0, 2*math.pi, False)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #右邊眼白
+    ctx.beginPath()
+    ctx.fillStyle = 'blue'
+    ctx.strokeStyle = "black"
+    ctx.arc(190, 95, 20, 0, 2*math.pi, False)
+
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #左邊眼球
+    ctx.beginPath()
+    ctx.fillStyle = 'black'
+    ctx.strokeStyle = "black"
+
+    ctx.arc(110, 95, 10, 0, 2*math.pi, False)
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #右邊眼球
+    ctx.beginPath()
+    ctx.fillStyle = 'black'
+    ctx.strokeStyle = "black"
+    ctx.arc(190, 95, 10, 0, 2*math.pi, False)
+
+    ctx.fill()
+    ctx.stroke()
+    ctx.closePath()
+
+    #嘴巴
+    ctx.fillStyle = "black"
+    ctx.fillRect(75, 170, 150, 10)
+
+    #左邊牙齒
+    ctx.fillStyle = "white"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(150, 180, 25, 40)
+
+
+    #右邊牙齒
+    ctx.fillStyle = "white"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(120, 180, 25, 40)
+
+    #衣服裝飾
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(80, 330, 40, 10)
+
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(10, 330, 40, 10)
+
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(250, 330, 40, 10)
+
+    ctx.fillStyle = "black"
+    ctx.strokeStyle = "black"
+    ctx.fillRect(180, 330, 40, 10)
+
+
+
+def HHH(e):
+    ctx.fillStyle = "white"
+    ctx.fillRect(0, 0, 300, 400)
+
+doc["h"].bind("click", HH)
+doc["h1"].bind("click", HHH)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="h"&gt;Brython Canvas 繪圖&lt;/button&gt;
+&lt;button id="h1"&gt;刪除&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;!-- 以下實際利用  Brython 畫圖 --&gt;
+
+&lt;div id="con"&gt;&lt;/div&gt;
+
+&lt;div id="con1"&gt;&lt;/div&gt;
+
+&lt;div id="con2"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import alert
+import random
+from browser import document
+from browser import html
+
+z1 = document["con1"]
+z1 &lt;= ("猜0~100的遊戲")
+
+g = document["con2"]
+c = document["con"]
+
+
+#ans = random.randint(1, 100)
+
+
+def z1(e):
+    c.clear()
+    ans = random.randint(1, 100)
+    a_in = int(input("輸入整數:0~100"))
+    guess = 1
+
+    while ans != a_in:
+        if a_in &lt; ans:
+            a_in = int(input("猜了幾"+ (str(guess)) + "次," + (str(a_in)) + "太小了,在猜一次"))
+        else:
+            a_in = int(input("猜了幾"+ (str(guess)) + "次," + (str(a_in)) + "太大了,在猜一次"))
+        guess += 1
+
+
+    c &lt;= ("恭喜!答對了 ,共猜了" + (str(guess)) + "次,答案是" + (str(ans)))
+
+def ANS(e):
+    alert("有答案確定還要玩")
+    g.clear()
+    c.clear()
+    ans = random.randint(1, 100)
+    #g &lt;= ans 
+    g &lt;= ("答案是" + (str(ans)))
+    a_in = int(input("輸入整數:0~100"))
+
+    guess = 1
+
+    while ans != a_in:
+        if a_in &lt; ans:
+            a_in = int(input("猜了幾"+ (str(guess)) + "次," + (str(a_in)) + "太小了,在猜一次"))
+        else:
+            a_in = int(input("猜了幾"+ (str(guess)) + "次," + (str(a_in)) + "太大了,在猜一次"))
+        guess += 1
+
+
+    g &lt;= ("恭喜!答對了 ,共猜了" + (str(guess)) + "次,答案就是" + (str(ans)))
+
+
+
+document["z1"].bind("click", z1)
+document["z2"].bind("click", ANS)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="z1"&gt;要自己猜的猜數字遊戲&lt;/button&gt;
+&lt;button id="z2"&gt;告訴你答案的猜數字遊戲&lt;/button&gt;&lt;/p&gt;
+&lt;h4&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;p&gt;以下猜數字遊戲&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="con"&gt;&lt;/div&gt;
+&lt;div id="con1"&gt;&lt;/div&gt;
+&lt;div id="con2"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import alert
+import random
+from browser import document
+from browser import html&lt;/p&gt;
+&lt;p&gt;z1 = document["con1"]
+z1 &amp;lt;= ("猜0~100的遊戲")&lt;/p&gt;
+&lt;p&gt;g = document["con2"]
+c = document["con"]&lt;/p&gt;
+&lt;h1&gt;ans = random.randint(1, 100)&lt;/h1&gt;
+&lt;p&gt;def z1(e):
+    c.clear()
+    ans = random.randint(1, 100)
+    a_in = int(input("輸入整數:0~100"))
+    guess = 1&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;while ans != a_in:
+    if a_in &amp;lt; ans:
+        a_in = int(input(&amp;quot;猜了幾&amp;quot;+ (str(guess)) + &amp;quot;次,&amp;quot; + (str(a_in)) + &amp;quot;太小了,在猜一次&amp;quot;))
+    else:
+        a_in = int(input(&amp;quot;猜了幾&amp;quot;+ (str(guess)) + &amp;quot;次,&amp;quot; + (str(a_in)) + &amp;quot;太大了,在猜一次&amp;quot;))
+    guess += 1
+
+
+c &amp;lt;= (&amp;quot;恭喜!答對了 ,共猜了&amp;quot; + (str(guess)) + &amp;quot;次,答案是&amp;quot; + (str(ans)))
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;def ANS(e):
+    alert("有答案確定還要玩")
+    g.clear()
+    c.clear()
+    ans = random.randint(1, 100)
+    #g &amp;lt;= ans 
+    g &amp;lt;= ("答案是" + (str(ans)))
+    a_in = int(input("輸入整數:0~100"))&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;guess = 1
+
+while ans != a_in:
+    if a_in &amp;lt; ans:
+        a_in = int(input(&amp;quot;猜了幾&amp;quot;+ (str(guess)) + &amp;quot;次,&amp;quot; + (str(a_in)) + &amp;quot;太小了,在猜一次&amp;quot;))
+    else:
+        a_in = int(input(&amp;quot;猜了幾&amp;quot;+ (str(guess)) + &amp;quot;次,&amp;quot; + (str(a_in)) + &amp;quot;太大了,在猜一次&amp;quot;))
+    guess += 1
+
+
+g &amp;lt;= (&amp;quot;恭喜!答對了 ,共猜了&amp;quot; + (str(guess)) + &amp;quot;次,答案就是&amp;quot; + (str(ans)))
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;document["z1"].bind("click", z1)
+document["z2"].bind("click", ANS)
+&lt;/script&gt;
+&lt;button id="z1"&gt;要自己猜的猜數字遊戲&lt;/button&gt;
+&lt;button id="z2"&gt;告訴你答案的猜數字遊戲&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
 &lt;div id ="ex2"&gt;&lt;/div&gt;
+
 &lt;script type="text/python3"&gt;
 from browser import document as doc
 from browser import html
 container = doc['ex2']
 
+def q(e):
+
+    mystring = input("要印出什麼字串?")
+    mynum = input("要印幾次?")
+
+    for i in range(int(mynum)):
+        #container&lt;="W14練習-2"+html.BR()
+        container&lt;=mystring+html.BR()
+
+def q1(e):
+    container.clear()        
+
+doc["j2"].bind("click", q1)        
+doc["j1"].bind("click", q)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="j1"&gt;要印出什麼字串跟印幾次&lt;/button&gt;
+&lt;button id="j2"&gt;刪除內容&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;迴圈練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id ="ex2"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['ex2']&lt;/p&gt;
+&lt;p&gt;def q(e):&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mystring = input(&amp;quot;要印出什麼字串?&amp;quot;)
+mynum = input(&amp;quot;要印幾次?&amp;quot;)
+
 for i in range(int(mynum)):
-    #container&lt;="W14練習-2"+html.BR()
-    container&lt;=mystring+html.BR()
-&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W16</title><link href="./w16.html" rel="alternate"></link><published>2016-12-26T14:35:00+08:00</published><updated>2016-12-26T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-26:./w16.html</id><summary type="html">&lt;h4&gt;W16&lt;/h4&gt;
+    #container&amp;lt;=&amp;quot;W14練習-2&amp;quot;+html.BR()
+    container&amp;lt;=mystring+html.BR()
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;def q1(e):
+    container.clear()        &lt;/p&gt;
+&lt;p&gt;doc["j2"].bind("click", q1)      &lt;br /&gt;
+doc["j1"].bind("click", q)
+&lt;/script&gt;
+&lt;button id="j1"&gt;要印出什麼字串跟印幾次&lt;/button&gt;
+&lt;button id="j2"&gt;刪除內容&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="a0101"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+a1 = document["a0101"]
+
+def A1(e):
+    #刪除("Hello World!")只顯示一次
+    a1.clear()
+
+    #print ("Hello World!")
+    a1 &lt;=  ("Hello World!")
+
+
+document["a1"].bind("click", A1)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="a1"&gt;01-01練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下01-01練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="a0101"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+a1 = document["a0101"]&lt;/p&gt;
+&lt;p&gt;def A1(e):
+    #刪除("Hello World!")只顯示一次
+    a1.clear()&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#print (&amp;quot;Hello World!&amp;quot;)
+a1 &amp;lt;=  (&amp;quot;Hello World!&amp;quot;)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;document["a1"].bind("click", A1)
+&lt;/script&gt;
+&lt;button id="a1"&gt;01-01練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="a0102"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+a2 = document["a0102"]
+
+def A2(e):
+
+    #刪除只顯示一次
+    a2.clear()
+
+    thetext = input("Enter some text ")
+    #print ("This is what you entered:")
+    #print (thetext)
+    a2 &lt;= ("This is what you entered:"+(thetext))
+
+document["a2"].bind("click", A2)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="a2"&gt;01-02練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下01-02練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="a0102"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+a2 = document["a0102"]&lt;/p&gt;
+&lt;p&gt;def A2(e):&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#刪除只顯示一次
+a2.clear()
+
+thetext = input(&amp;quot;Enter some text &amp;quot;)
+#print (&amp;quot;This is what you entered:&amp;quot;)
+#print (thetext)
+a2 &amp;lt;= (&amp;quot;This is what you entered:&amp;quot;+(thetext))
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;document["a2"].bind("click", A2)
+&lt;/script&gt;
+&lt;button id="a2"&gt;01-02練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="a0103"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+a3 = document["a0103"]
+
+def A3(e):
+
+       #刪除只顯示一次
+    a3.clear()
+    # Note that \n within quote marks forces a new line to be printed
+    thetext = input("Enter some text\n")
+    #print ("This is what you entered:")
+    #print (thetext)
+    a3 &lt;= ("This is what you entered:"+(thetext))
+
+
+document["a3"].bind("click", A3)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="a3"&gt;01-03練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下01-03練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="a0103"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+a3 = document["a0103"]&lt;/p&gt;
+&lt;p&gt;def A3(e):&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   #刪除只顯示一次
+a3.clear()
+# Note that \n within quote marks forces a new line to be printed
+thetext = input(&amp;quot;Enter some text\n&amp;quot;)
+#print (&amp;quot;This is what you entered:&amp;quot;)
+#print (thetext)
+a3 &amp;lt;= (&amp;quot;This is what you entered:&amp;quot;+(thetext))
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;document["a3"].bind("click", A3)
+&lt;/script&gt;
+&lt;button id="a3"&gt;01-03練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="a0104"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+a4 = document["a0104"]
+
+def A4(e):
+
+    #刪除只顯示一次
+    a4.clear()
+
+    prompt  = "Enter a some text "
+    thetext = input(prompt)
+    #print ("This is what you entered:")
+    #print (thetext)
+
+
+    a4 &lt;= ("This is what you entered:"+(thetext))
+
+
+document["a4"].bind("click", A4)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="a4"&gt;01-04練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下01-04練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="a0104"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+a4 = document["a0104"]&lt;/p&gt;
+&lt;p&gt;def A4(e):&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#刪除只顯示一次
+a4.clear()
+prompt  = &amp;quot;Enter a some text &amp;quot;
+thetext = input(prompt)
+#print (&amp;quot;This is what you entered:&amp;quot;)
+#print (thetext)
+a4 &amp;lt;= (&amp;quot;This is what you entered:&amp;quot;+(thetext))
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;document["a4"].bind("click", A4)
+&lt;/script&gt;
+&lt;button id="a4"&gt;01-04練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="b0201"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+b1 = document["b0201"]
+
+def B1(e):
+    #刪除上一個平均
+    b1.clear()
+
+    total = 0.0
+    number1=float(input("Enter the first number: "))
+    total = total + number1
+    number2=float(input("Enter the second number: "))
+    total = total + number2
+    number3=float(input("Enter the third number: "))
+    total = total + number3
+    average = total / 3
+    b1 &lt;= ("The average is " + str(average))
+
+
+
+document["b1"].bind("click", B1)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="b1"&gt;02-01練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下02-01平均練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="b0201"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+b1 = document["b0201"]&lt;/p&gt;
+&lt;p&gt;def B1(e):
+    #刪除上一個平均
+    b1.clear()&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;total = 0.0
+number1=float(input(&amp;quot;Enter the first number: &amp;quot;))
+total = total + number1
+number2=float(input(&amp;quot;Enter the second number: &amp;quot;))
+total = total + number2
+number3=float(input(&amp;quot;Enter the third number: &amp;quot;))
+total = total + number3
+average = total / 3
+b1 &amp;lt;= (&amp;quot;The average is &amp;quot; + str(average))
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;document["b1"].bind("click", B1)
+&lt;/script&gt;
+&lt;button id="b1"&gt;02-01練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="b0202"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+b2 = document["b0202"]
+
+def B2(e):   
+    #刪除上一個
+    b2.clear()
+    number1=float(input("Enter the first number: "))
+    number2=float(input("Enter the second number: "))
+    number3=float(input("Enter the third number: "))
+    total = number1 + number2 + number3
+    average = total / 3
+    #print ("The average is: ")
+    #print (average)
+    b2 &lt;= ("The average is " + str(average))
+
+
+document["b2"].bind("click", B2)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="b2"&gt;02-02練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下02-02平均練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="b0202"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+b2 = document["b0202"]&lt;/p&gt;
+&lt;p&gt;def B2(e):
+    #刪除上一個
+    b2.clear()
+    number1=float(input("Enter the first number: "))
+    number2=float(input("Enter the second number: "))
+    number3=float(input("Enter the third number: "))
+    total = number1 + number2 + number3
+    average = total / 3
+    #print ("The average is: ")
+    #print (average)
+    b2 &amp;lt;= ("The average is " + str(average))&lt;/p&gt;
+&lt;p&gt;document["b2"].bind("click", B2)
+&lt;/script&gt;
+&lt;button id="b2"&gt;02-02練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="b0203"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+b3 = document["b0203"]
+
+def B3(e):
+    #刪除上一個
+    b3.clear()
+    total = 0.0
+    count = 0
+    while count &lt; 3:
+        number=float(input("Enter a number: "))
+        count = count + 1
+        total = total + number
+    average = total / 3
+    #print ("The average is " + str(average))
+    b3 &lt;= ("The average is " + str(average))
+
+
+document["b3"].bind("click", B3)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="b3"&gt;02-03練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下02-03平均練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="b0203"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+b3 = document["b0203"]&lt;/p&gt;
+&lt;p&gt;def B3(e):
+    #刪除上一個
+    b3.clear()
+    total = 0.0
+    count = 0
+    while count &amp;lt; 3:
+        number=float(input("Enter a number: "))
+        count = count + 1
+        total = total + number
+    average = total / 3
+    #print ("The average is " + str(average))
+    b3 &amp;lt;= ("The average is " + str(average))&lt;/p&gt;
+&lt;p&gt;document["b3"].bind("click", B3)
+&lt;/script&gt;
+&lt;button id="b3"&gt;02-03練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="c0301"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+
+c1 = document["c0301"]
+
+def C1(e):
+    #刪掉上一個
+    c1.clear()
+
+    sum = 10
+
+    c1 &lt;= (str(sum))
+
+document["c1"].bind("click", C1)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="c1"&gt;03-01,03-02練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下03-01,03-02練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="c0301"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document&lt;/p&gt;
+&lt;p&gt;c1 = document["c0301"]&lt;/p&gt;
+&lt;p&gt;def C1(e):
+    #刪掉上一個
+    c1.clear()&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sum = 10
+
+c1 &amp;lt;= (str(sum))
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;document["c1"].bind("click", C1)
+&lt;/script&gt;
+&lt;button id="c1"&gt;03-01,03-02練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="c0303"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+
+c3 = document["c0303"]
+
+def C3(e):
+    #刪掉上一個
+    c3.clear()
+    sum = 10
+    #print (sum)
+    #print (type (sum))
+    c3 &lt;= (sum)
+    c3 &lt;= (type(sum))
+
+
+document["c3"].bind("click", C3)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="c3"&gt;03-03練習&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下03-03練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="c0303"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document&lt;/p&gt;
+&lt;p&gt;c3 = document["c0303"]&lt;/p&gt;
+&lt;p&gt;def C3(e):
+    #刪掉上一個
+    c3.clear()
+    sum = 10
+    #print (sum)
+    #print (type (sum))
+    c3 &amp;lt;= (sum)
+    c3 &amp;lt;= (type(sum))&lt;/p&gt;
+&lt;p&gt;document["c3"].bind("click", C3)
+&lt;/script&gt;
+&lt;button id="c3"&gt;03-03練習&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;div id="c0304"&gt;&lt;/div&gt;
+
+&lt;div id="cs"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+c4 = document["c0304"]
+
+cc = document["cs"]
+
+cc &lt;= ("2+4 ,  6-4  ,  6*3  , 6/3  ,  6%3  ,  6//3  ,  -5  , 3的2次方 答案")
+
+def C4(e):  
+
+
+    #print (2 + 4)
+    #print (6 - 4)
+    #print (6 * 3)
+    #print (6 / 3)
+    #print (6 % 3)
+    #print (6 // 3) # floor division: always truncates fractional remainders
+    #print (-5)
+    #print (3**2)   # three to the power of 2
+
+    c4 &lt;= (2 + 4)+html.BR()
+
+    c4 &lt;= (6 - 4)+html.BR()
+
+    c4 &lt;= (6 * 3)+html.BR()
+
+    c4 &lt;= (6 /3)+html.BR()    
+
+    c4 &lt;= (6 % 3)+html.BR()
+
+    c4 &lt;= (6 // 3)+html.BR()
+
+    c4 &lt;= (-5)+html.BR()
+
+    c4 &lt;= (3**2)+html.BR()
+
+def cd(e):
+    c4.clear()
+
+document["c4"].bind("click", C4)
+document["cd"].bind("click", cd)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="c4"&gt;03-04練習&lt;/button&gt;
+&lt;button id="cd"&gt;刪除&lt;/button&gt;&lt;/p&gt;
+&lt;h5&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;p&gt;以下03-04練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="c0304"&gt;&lt;/div&gt;
+&lt;div id="cs"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+c4 = document["c0304"]&lt;/p&gt;
+&lt;p&gt;cc = document["cs"]&lt;/p&gt;
+&lt;p&gt;cc &amp;lt;= ("2+4 ,  6-4  ,  6*3  , 6/3  ,  6%3  ,  6//3  ,  -5  , 3的2次方 答案")&lt;/p&gt;
+&lt;p&gt;def C4(e):  &lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#print (2 + 4)
+#print (6 - 4)
+#print (6 * 3)
+#print (6 / 3)
+#print (6 % 3)
+#print (6 // 3) # floor division: always truncates fractional remainders
+#print (-5)
+#print (3**2)   # three to the power of 2
+
+c4 &amp;lt;= (2 + 4)+html.BR()
+
+c4 &amp;lt;= (6 - 4)+html.BR()
+
+c4 &amp;lt;= (6 * 3)+html.BR()
+
+c4 &amp;lt;= (6 /3)+html.BR()
+
+c4 &amp;lt;= (6 % 3)+html.BR()
+
+c4 &amp;lt;= (6 // 3)+html.BR()
+
+c4 &amp;lt;= (-5)+html.BR()
+
+c4 &amp;lt;= (3**2)+html.BR()
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;def cd(e):
+    c4.clear()&lt;/p&gt;
+&lt;p&gt;document["c4"].bind("click", C4)
+document["cd"].bind("click", cd)
+&lt;/script&gt;
+&lt;button id="c4"&gt;03-04練習&lt;/button&gt;
+&lt;button id="cd"&gt;刪除&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h6&gt;&lt;/h6&gt;
+&lt;p&gt;&lt;div id="c0309"&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+
+c9 = document["c0309"]
+
+
+
+def C9(e):
+    # these are string assignments
+    a9=("Hello out there")
+    #print (a)
+    b9=("Hello")
+    #print (b)
+    c5=("Where's the spam?")
+    #print (c)
+    dd=("x")
+    #print (d)
+
+    c9 &lt;= (a9)+html.BR()
+
+    c9 &lt;= (b9)+html.BR()
+
+    c9 &lt;= (c5)+html.BR()    
+
+    c9 &lt;= (dd)+html.BR()
+
+def c6(e):
+    c9.clear()
+
+document["c9"].bind("click", C9)
+document["c6"].bind("click", c6)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="c9"&gt;03-09練習&lt;/button&gt;
+&lt;button id="c6"&gt;刪除&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;p&gt;以下03-09練習&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="c0309"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html&lt;/p&gt;
+&lt;p&gt;c9 = document["c0309"]
+def C9(e):
+    # these are string assignments
+    a9=("Hello out there")
+    #print (a)
+    b9=("Hello")
+    #print (b)
+    c5=("Where's the spam?")
+    #print (c)
+    dd=("x")
+    #print (d)&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;c9 &amp;lt;= (a9)+html.BR()
+
+c9 &amp;lt;= (b9)+html.BR()
+
+c9 &amp;lt;= (c5)+html.BR()
+
+c9 &amp;lt;= (dd)+html.BR()
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;def c6(e):
+    c9.clear()&lt;/p&gt;
+&lt;p&gt;document["c9"].bind("click", C9)
+document["c6"].bind("click", c6)
+&lt;/script&gt;
+&lt;button id="c9"&gt;03-09練習&lt;/button&gt;
+&lt;button id="c6"&gt;刪除&lt;/button&gt;
+&lt;/pre&gt;&lt;/p&gt;
+&lt;h1&gt;W15影片內容&lt;/h1&gt;
+&lt;h1&gt;整理14週影片跟程式範例使用&lt;/h1&gt;
+&lt;iframe src="https://player.vimeo.com/video/198635771" width="640" height="347" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/198635771"&gt;2017-01-09_13-36-34&lt;/a&gt; from &lt;a href="https://vimeo.com/user58510993"&gt;40523209&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1&gt;W16影片內容&lt;/h1&gt;
+&lt;h1&gt;RoboDK的使用方法跟製作猜數字遊戲!!&lt;/h1&gt;
+&lt;iframe src="https://player.vimeo.com/video/198636353" width="640" height="347" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/198636353"&gt;2017-01-09_13-51-36&lt;/a&gt; from &lt;a href="https://vimeo.com/user58510993"&gt;40523209&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1&gt;W17影片內容&lt;/h1&gt;
+&lt;p&gt;&lt;img src="https://github.com/s40523209/2016fallcp_hw/blob/gh-pages/908.PNG?raw=true" alt="W17" title="W17" border="100" width=" 1000px" height="500px"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/198636767" width="640" height="347" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://vimeo.com/198636767"&gt;2017-01-09_13-58-22&lt;/a&gt; from &lt;a href="https://vimeo.com/user58510993"&gt;40523209&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>W16</title><link href="./w16.html" rel="alternate"></link><published>2016-12-26T14:35:00+08:00</published><updated>2016-12-26T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-26:./w16.html</id><summary type="html">&lt;h4&gt;W16&lt;/h4&gt;
 
 
 
@@ -81,60 +1155,46 @@ brython(1);
 
 &lt;div id="con"&gt;&lt;/div&gt;
 
+&lt;div id="con1"&gt;&lt;/div&gt;
+
 &lt;script type="text/python3"&gt;
 from browser import alert
+import random
 from browser import document
 from browser import html
-import random
-#print("test")
-#alert("test")
-con1 = document["con"]
-con2 = document["con"]
-#import random 
-#1.利用亂數模組產生標準答案
-#標準答案 = random.randint(1, 100)
 
-#2.取得使用者所猜的整數(可以使用 try except 防止輸入非整數)
-#3.根據使用者與標準答案比較大小,並且回應提示字串
-'''4.假如利用 while 迴圈,可以在使用者沒有猜對之前繼續輸入,並累計猜題次數
-'''
-con1 &lt;= str(標準答案)
-'''
-try:
-    for i in range(1):
-        #con1 &lt;= "test"+"&lt;br /&gt;"
-        yourInput=int(input("請輸入一個整數!"))  
-        #con1 &lt;="test"+html.BR()
-        output = yourInput + 1
-        con1 &lt;="你輸入的整數加上1之後,為"+str(output)
-except:
-     con1 &lt;="拜託請輸入整數!"
-'''
-def b1(e):
-    alert("")
-document["b1"].bind("click",b1)
+z1 = document["con1"]
+z1 &lt;= ("猜0~100的遊戲")
 
-#coding: utf-8
-# 猜數字遊戲
-import random
 
-標準答案 = random.randint(1, 100)
-你猜的數字 = int(input("請輸入您所猜的整數:"))
-猜測次數 = 1
-while 標準答案 != 你猜的數字:
-    if 標準答案 &lt; 你猜的數字:
-        print("太大了，再猜一次 :)加油")
-    else:
-        print("太小了，再猜一次 :)加油")
-    你猜的數字 = int(input("請輸入您所猜的整數:"))
-    猜測次數 += 1
+c = document["con"]
 
-print1("猜對了！總共猜了", 猜測次數, "次")
-con2 &lt;= print1("猜對了！總共猜了", 猜測次數, "次")
+
+#ans = random.randint(1, 100)
+
+
+def z1(e):
+    c.clear()
+    ans = random.randint(1, 100)
+    a_in = int(input("輸入整數:0~100"))
+    guess = 1
+
+    while ans != a_in:
+        if a_in &lt; ans:
+            a_in = int(input("猜了幾"+ (str(guess)) + "次," + (str(a_in)) + "太小了,在猜一次"))
+        else:
+            a_in = int(input("猜了幾"+ (str(guess)) + "次," + (str(a_in)) + "太大了,在猜一次"))
+        guess += 1
+
+
+    c &lt;= ("恭喜!答對了 ,共猜了" + (str(guess)) + "次,答案是" + (str(ans)))
+
+
+document["z1"].bind("click", z1)
 
 &lt;/script&gt;
 
-&lt;p&gt;&lt;button id ="b1"&gt;玩猜數字遊戲&lt;/button&gt;&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>W15 整理影片重點</title><link href="./w15-zheng-li-ying-pian-zhong-dian.html" rel="alternate"></link><published>2016-12-19T14:35:00+08:00</published><updated>2016-12-19T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-19:./w15-zheng-li-ying-pian-zhong-dian.html</id><summary type="html">&lt;h4&gt;W14影片重點&lt;/h4&gt;
+&lt;p&gt;&lt;button id="z1"&gt;猜數字遊戲&lt;/button&gt;&lt;/p&gt;</summary><category term="每週練習"></category></entry><entry><title>W15 整理影片重點</title><link href="./w15-zheng-li-ying-pian-zhong-dian.html" rel="alternate"></link><published>2016-12-19T14:35:00+08:00</published><updated>2016-12-19T14:35:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-19:./w15-zheng-li-ying-pian-zhong-dian.html</id><summary type="html">&lt;h4&gt;W14影片重點&lt;/h4&gt;
 
 
 
@@ -212,13 +1272,44 @@ container&lt;="W14練習"
 from browser import document as doc
 from browser import html
 container = doc['ex2']
-mystring = input("要印出什麼字串?")
-mynum = input("要印幾次?")
 
-for i in range(int(mynum)):
-    #container&lt;="W14練習-2"+html.BR()
-    container&lt;=mystring+html.BR()
-&lt;/script&gt;</summary><category term="每週練習"></category></entry><entry><title>W13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-05T12:00:00+08:00</published><updated>2016-12-05T12:00:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-05:./w13.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
+def q(e):
+
+    mystring = input("要印出什麼字串?")
+    mynum = input("要印幾次?")
+
+    for i in range(int(mynum)):
+        #container&lt;="W14練習-2"+html.BR()
+        container&lt;=mystring+html.BR()
+
+
+doc["z1"].bind("click", q)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="z1"&gt;要印出什麼字串跟印幾次&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;程式內容&lt;/p&gt;
+
+&lt;pre class="brush: python"&gt;
+&lt;div id ="ex2"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document as doc
+from browser import html
+container = doc['ex2']
+
+def q(e):
+
+    mystring = input("要印出什麼字串?")
+    mynum = input("要印幾次?")
+
+    for i in range(int(mynum)):
+        #container&lt;="W14練習-2"+html.BR()
+        container&lt;=mystring+html.BR()
+
+
+doc["z1"].bind("click", q)
+&lt;/script&gt;
+&lt;button id="z1"&gt;要印出什麼字串跟印幾次&lt;/button&gt;
+&lt;/pre&gt;</summary><category term="每週練習"></category></entry><entry><title>W13</title><link href="./w13.html" rel="alternate"></link><published>2016-12-05T12:00:00+08:00</published><updated>2016-12-05T12:00:00+08:00</updated><author><name>40523209</name></author><id>tag:,2016-12-05:./w13.html</id><summary type="html">&lt;p&gt;畫線練習&lt;/p&gt;
 
 
 &lt;p&gt;畫線練習&lt;/p&gt;
@@ -2374,914 +3465,4 @@ ctx.closePath()
 
 
 
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 程式練習題-12345</title><link href="./2016fall-cheng-shi-lian-xi-ti-12345.html" rel="alternate"></link><published>2016-10-31T12:00:00+08:00</published><updated>2016-10-31T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-31:./2016fall-cheng-shi-lian-xi-ti-12345.html</id><summary type="html">&lt;p&gt;1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
-
-
-&lt;p&gt;找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 程式練習題-1234</title><link href="./2016fall-cheng-shi-lian-xi-ti-1234.html" rel="alternate"></link><published>2016-10-24T12:00:00+08:00</published><updated>2016-10-24T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-24:./2016fall-cheng-shi-lian-xi-ti-1234.html</id><summary type="html">&lt;p&gt;1234已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
-
-
-&lt;p&gt;以下利用 Brython 讀取位於倉儲中的 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt; 與 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt; 資料檔案.&lt;/p&gt;
-&lt;p&gt;表示學校教務系統中, 修 2016fallcpa 的學員名單為:&lt;/p&gt;
-&lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
-
-&lt;!-- 啟動 Brython --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;!-- 以下利用 Brython 程式執行檔案讀取與比對流程 --&gt;
-
-&lt;!-- 假如需要用圖型表示數字, 則利用 canvas 繪圖 --&gt;
-
-&lt;!-- &lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt; --&gt;
-
-&lt;div id="container"&gt;&lt;/div&gt;
-
-&lt;script type="text/python3" id="script1"&gt;
-from browser import document, html
-container = document['container']
-data = open("./../w6_list.txt").read()
-container &lt;= data
-&lt;/script&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;p&gt;而截至 w6, 納入分組名單中的學員有:&lt;/p&gt;
-&lt;div id="container2"&gt;&lt;/div&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document, html
-container2 = document['container2']
-data2 = open("./../w6_group.txt").read()
-container2 &lt;= data2
-&lt;/script&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;p&gt;現在, 誰能夠幫我們找出至今尚未納入分組名單中的學員, 共有那些人？&lt;/p&gt;
-&lt;div id="container3"&gt;&lt;/div&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document, html
-# 從 id=script1 程式區段取 data 變數
-from script1 import data
-container3 = document['container3']
-data3 = open("./../w6_group.txt").read()
-group = data3.splitlines()
-# 希望將分組資料轉為學員數列, 令為變數名稱 result_g
-result_g = []
-# 已經註冊者數列設為 registered
-registered = []
-for line in group:
-    # 去除每一行最後的空白成員
-    sline = line.split(",")
-    # 再將各組拆成個別組員後, 串成 result_g
-    for m in sline:
-        result_g.append(m)
-    #container3 &lt;= len(sline)
-    #container3 &lt;= html.BR()
-#container3 &lt;= len(result_g)
-registered = data.splitlines()[:-1]
-# 設法找出至今尚未分組的學員學號
-not_in_group = [c for c in registered if c not in result_g]
-#container3 &lt;= len(registered) -len(result_g)
-n = 1
-for i in not_in_group:
-    container3 &lt;= "第"+str(n)+"位: "+ str(i)
-    n = n + 1
-    container3 &lt;= html.BR()
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 程式練習題</title><link href="./2016fall-cheng-shi-lian-xi-ti.html" rel="alternate"></link><published>2016-10-22T12:00:00+08:00</published><updated>2016-10-22T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-10-22:./2016fall-cheng-shi-lian-xi-ti.html</id><summary type="html">&lt;p&gt;已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt;, 而從學校修課系統下載的修課人員名條則為 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt;, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?&lt;/p&gt;
-
-
-&lt;p&gt;以下利用 Brython 讀取位於倉儲中的 &lt;a href="./../w6_list.txt"&gt;w6_list.txt&lt;/a&gt; 與 &lt;a href="./../w6_group.txt"&gt;w6_group.txt&lt;/a&gt; 資料檔案.&lt;/p&gt;
-&lt;p&gt;表示學校教務系統中, 修 2016fallcpa 的學員名單為:&lt;/p&gt;
-&lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
-
-&lt;!-- 啟動 Brython --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;!-- 以下利用 Brython 程式執行檔案讀取與比對流程 --&gt;
-
-&lt;!-- 假如需要用圖型表示數字, 則利用 canvas 繪圖 --&gt;
-
-&lt;!-- &lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt; --&gt;
-
-&lt;div id="container"&gt;&lt;/div&gt;
-
-&lt;script type="text/python3" id="script1"&gt;
-from browser import document, html
-container = document['container']
-data = open("./../w6_list.txt").read()
-container &lt;= data
-&lt;/script&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;p&gt;而截至 w6, 納入分組名單中的學員有:&lt;/p&gt;
-&lt;div id="container2"&gt;&lt;/div&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document, html
-container2 = document['container2']
-data2 = open("./../w6_group.txt").read()
-container2 &lt;= data2
-&lt;/script&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-&lt;p&gt;現在, 誰能夠幫我們找出至今尚未納入分組名單中的學員, 共有那些人？&lt;/p&gt;
-&lt;div id="container3"&gt;&lt;/div&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document, html
-# 從 id=script1 程式區段取 data 變數
-from script1 import data
-container3 = document['container3']
-data3 = open("./../w6_group.txt").read()
-group = data3.splitlines()
-# 希望將分組資料轉為學員數列, 令為變數名稱 result_g
-result_g = []
-# 已經註冊者數列設為 registered
-registered = []
-for line in group:
-    # 去除每一行最後的空白成員
-    sline = line.split(",")
-    # 再將各組拆成個別組員後, 串成 result_g
-    for m in sline:
-        result_g.append(m)
-    #container3 &lt;= len(sline)
-    #container3 &lt;= html.BR()
-#container3 &lt;= len(result_g)
-registered = data.splitlines()[:-1]
-# 設法找出至今尚未分組的學員學號
-not_in_group = [c for c in registered if c not in result_g]
-#container3 &lt;= len(registered) -len(result_g)
-n = 1
-for i in not_in_group:
-    container3 &lt;= "第"+str(n)+"位: "+ str(i)
-    n = n + 1
-    container3 &lt;= html.BR()
-&lt;/script&gt;</summary><category term="使用導引"></category></entry><entry><title>2016Fall 機械設計主題教學</title><link href="./2016fall-ji-jie-she-ji-zhu-ti-jiao-xue.html" rel="alternate"></link><published>2016-09-02T12:00:00+08:00</published><updated>2016-09-02T12:00:00+08:00</updated><author><name>yen</name></author><id>tag:,2016-09-02:./2016fall-ji-jie-she-ji-zhu-ti-jiao-xue.html</id><summary type="html">&lt;p&gt;知識管理與最佳化應用實驗室試圖利用計算機程式、網際內容管理、電腦輔助設計實習與協同產品設計實習等課程, 進行與機械設計相關的主題式教學, 其中包含強化創造力的教學、令學員熟習六種工程表達方式, 並且俱備融入協同設計所需要的四大面向知識與技能.&lt;/p&gt;
-
-
-&lt;h1&gt;機械設計主題教學&lt;/h1&gt;
-&lt;p&gt;創造力三元素, 機械設計的六種表達, 協同設計的四大面向.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;強化創造能力 - 自學力、程式力與想像力
-(Creative Competencies)&lt;/li&gt;
-&lt;li&gt;熟習六種表達  - 口語、文字、2D、3D、理論與實體表達
-(Six Presentation Methods)&lt;/li&gt;
-&lt;li&gt;融入協同設計 - 電腦、網路、軟硬體工具與協同專案
-(Collaborative Designs)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1&gt;計算機程式&lt;/h1&gt;
-&lt;p&gt;從 Python3 的 print(), input(), 變數命名到關鍵字, 可以透過簡單的單位轉換問題進行練習:&lt;/p&gt;
-&lt;p&gt;首先我們舉 Python3 程式執行的三個地方:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在單機 Windows 10 操作系統環境下利用可攜程式系統執行&lt;/li&gt;
-&lt;li&gt;利用遠端桌面或 X-Windows, 在近端利用遠端的電腦硬體與操作系統執行&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在近端利用瀏覽器執行&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;單機執行:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;按下  start.bat 後, 系統就會配置好 git 與 Python3 的程式環境, 可以在命令列中直接用互動的方式執行 Python3 程式, 也可以在 SciTE 編輯器中, 透過設定按下 go 之後執行&lt;/p&gt;
-&lt;p&gt;所牽涉的問題:&lt;/p&gt;
-&lt;p&gt;可攜程式環境如何建立? Python3 執行環境如何配置? 執行的 Python3 是那一個版本?&lt;/p&gt;
-&lt;p&gt;希望在 SciTE 中直接執行 Python3 程式, 該如何設定?&lt;/p&gt;
-&lt;p&gt;能不能在 Leo Editor 中執行 Python3 程式, 為何要這樣做?&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;近端連到遠端執行:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;以 Remote Desktop, 連接到遠端的電腦畫面中執行可攜程式系統中的 Python3 程式, 基本架構與流程與近端單機執行相同.&lt;/p&gt;
-&lt;p&gt;利用 putty 與 Xming, 連線到支援 X-Windows 協定的電腦, 將遠端的視窗搬到近端執行, 但仍使用遠端電腦的硬體與軟體支援.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在瀏覽器中執行:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;由於網際瀏覽器環境所整合的工具愈來愈多, 就連原本只能在單機執行的 SolidWorks, 也已經有初步成型的 OnShape 可以取代部份的零組件設計分析工作, 因此本課程以 Brython 為例, 說明如何在瀏覽器中執行 Python3 程式.&lt;/p&gt;
-&lt;p&gt;所牽涉問題:&lt;/p&gt;
-&lt;p&gt;如何設置? &lt;a href="https://www.brython.info/tests/console.html?lang=en"&gt;Brython Console&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;所有近端能執行的程式都能利用瀏覽器執行?&lt;/p&gt;
-&lt;p&gt;以下使用 Brython 標準程式庫執行 Python3 繪圖程式:&lt;/p&gt;
-&lt;!-- 導入 Brython 標準程式庫 --&gt;
-
-&lt;script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
-&lt;/script&gt;
-
-&lt;!-- 啟動 Brython --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;!-- 以下利用 Brython 程式執行繪圖 --&gt;
-
-&lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-# 導入 browser 模組中的 document, 並設為 doc 變數
-from browser import document as doc
-# 導入數學模組
-import math
-# 產生各小球的亂數速度用
-import random
-# 導入 browser 中的計時器, 建立動畫用
-import browser.timer
-
-# 準備繪圖畫布
-canvas = doc["plotarea"]
-ctx = canvas.getContext("2d")
-
-# 取畫布的寬與高度
-width = canvas.width
-height = canvas.height
-
-n = 20
-# 已知數列內容個數, 先分別與 None 對應
-x = [None]*n
-y = [None]*n
-vy = [None]*n
-vx = [None]*n
-# 重力加速度, Y 方向向下為正
-g = 0.05
-# 空氣的黏滯阻尼係數
-cor = 0.7 
-# 球的彈力係數
-fr = 0.95
-# 球的半徑
-r = 5
-
-for i in range(n):
-    x[i] = 300
-    y[i] = 100
-    # random.random() 將會產生介於 0 與 1 的浮點亂數
-    vx[i] = 2*(random.random()-.5)
-    vy[i] = 2*(random.random()-.5)
-
-# 更新第 i 球 Y 座標的運算邏輯
-def updateY(i):
-    if ((y[i]+r) &lt; height):
-        #y = height
-        vy[i] += g
-    else:
-        vy[i] = -vy[i]*cor
-        vx[i] *= fr
-    y[i] += vy[i]
-    if ((y[i]+r) &gt; height):
-        y[i] = height-r
-
-# 更新第 i 球 X 座標的運算邏輯
-def updateX(i):
-    if ((x[i]+r) &gt;= width or (x[i]-r) &lt;= 0):
-        vx[i] = -vx[i]*cor
-    x[i] += vx[i]
-    if ((x[i]+r) &gt; width):
-        x[i] = width-r
-    elif ((x[i]-r) &lt; 0):
-        x[i] = r
-
-# 畫圓函式
-def circle(x,y,r):
-    ctx.beginPath()
-    ctx.arc(x, y, r, 0, math.pi*2, True)
-    ctx.fill()
-    ctx.closePath()
-
-# 寫字函式
-def text(s):
-    ctx.fillStyle = "#ff0000"
-    ctx.font = "30px sans-serif"
-    ctx.textBaseline = "bottom"
-    ctx.fillText(s,0,height)
-
-# 每隔特定時間, 進行動畫繪製
-def animate():
-    # 刷新畫布
-    ctx.clearRect(0, 0, width, height)
-    # 逐一重新繪製小球
-    ctx.fillStyle = "#000000"
-    for i in range(n):
-        updateY(i)
-        updateX(i)
-        circle(x[i],y[i],r)
-
-text("Click me!")
-
-# 畫布點擊後執行的函式
-def on_canvas_click(ev):
-    browser.timer.set_interval(animate,0)
-
-# 只要使用者點擊在畫布上任何地方, 即執行 on_canvas_click 函式
-canvas.bind('click', on_canvas_click, False)
-&lt;/script&gt;
-
-&lt;p&gt;上面小球自由落體的繪圖程式:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-&amp;lt;canvas id="plotarea" width="600" height="400"&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;script type="text/python3"&amp;gt;
-# 導入 browser 模組中的 document, 並設為 doc 變數
-from browser import document as doc
-# 導入數學模組
-import math
-# 產生各小球的亂數速度用
-import random
-# 導入 browser 中的計時器, 建立動畫用
-import browser.timer
-
-# 準備繪圖畫布
-canvas = doc["plotarea"]
-ctx = canvas.getContext("2d")
-
-# 取畫布的寬與高度
-width = canvas.width
-height = canvas.height
-
-n = 20
-# 已知數列內容個數, 先分別與 None 對應
-x = [None]*n
-y = [None]*n
-vy = [None]*n
-vx = [None]*n
-# 重力加速度, Y 方向向下為正
-g = 0.05
-# 空氣的黏滯阻尼係數
-cor = 0.7 
-# 球的彈力係數
-fr = 0.95
-# 球的半徑
-r = 5
-
-for i in range(n):
-    x[i] = 300
-    y[i] = 100
-    # random.random() 將會產生介於 0 與 1 的浮點亂數
-    vx[i] = 2*(random.random()-.5)
-    vy[i] = 2*(random.random()-.5)
-
-# 更新第 i 球 Y 座標的運算邏輯
-def updateY(i):
-    if ((y[i]+r) &amp;lt; height):
-        #y = height
-        vy[i] += g
-    else:
-        vy[i] = -vy[i]*cor
-        vx[i] *= fr
-    y[i] += vy[i]
-    if ((y[i]+r) &amp;gt; height):
-        y[i] = height-r
-
-# 更新第 i 球 X 座標的運算邏輯
-def updateX(i):
-    if ((x[i]+r) &amp;gt;= width or (x[i]-r) &amp;lt;= 0):
-        vx[i] = -vx[i]*cor
-    x[i] += vx[i]
-    if ((x[i]+r) &amp;gt; width):
-        x[i] = width-r
-    elif ((x[i]-r) &amp;lt; 0):
-        x[i] = r
-
-# 畫圓函式
-def circle(x,y,r):
-    ctx.beginPath()
-    ctx.arc(x, y, r, 0, math.pi*2, True)
-    ctx.fill()
-    ctx.closePath()
-
-# 寫字函式
-def text(s):
-    ctx.fillStyle = "#ff0000"
-    ctx.font = "30px sans-serif"
-    ctx.textBaseline = "bottom"
-    ctx.fillText(s,0,height)
-
-# 每隔特定時間, 進行動畫繪製
-def animate():
-    # 刷新畫布
-    ctx.clearRect(0, 0, width, height)
-    # 逐一重新繪製小球
-    ctx.fillStyle = "#000000"
-    for i in range(n):
-        updateY(i)
-        updateX(i)
-        circle(x[i],y[i],r)
-
-text("Click me!")
-
-# 畫布點擊後執行的函式
-def on_canvas_click(ev):
-    browser.timer.set_interval(animate,0)
-
-# 只要使用者點擊在畫布上任何地方, 即執行 on_canvas_click 函式
-canvas.bind('click', on_canvas_click, False)
-&amp;lt;/script&amp;gt;
-&lt;/pre&gt;
-
-&lt;p&gt;繪製日本國旗:&lt;/p&gt;
-&lt;p&gt;步驟1, 先能畫一條線:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-&amp;lt;canvas id="japanflag1" width="600" height="250"&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;script type="text/python3"&amp;gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["japanflag1"]
-ctx = canvas.getContext("2d")
-
-# 以下可以利用 ctx 物件進行畫圖
-# 先畫一條直線
-ctx.beginPath()
-# 設定線的寬度為 1 個單位
-ctx.lineWidth = 1
-# 將畫筆移動到 (100, 100) 座標點
-ctx.moveTo(100, 100)
-# 然後畫直線到 (150, 200) 座標點
-ctx.lineTo(150, 200)
-# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-ctx.strokeStyle = "blue"
-# 實際執行畫線
-ctx.stroke()
-ctx.closePath()
-&amp;lt;/script&amp;gt;
-&lt;/pre&gt;
-
-&lt;!-- 以下實際利用  Brython 畫一條直線 --&gt;
-
-&lt;canvas id="japanflag1" width="600" height="250"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-from browser import document as doc
-import math
-# 準備繪圖畫布
-canvas = doc["japanflag1"]
-ctx = canvas.getContext("2d")
-
-# 以下可以利用 ctx 物件進行畫圖
-# 先畫一條直線
-ctx.beginPath()
-# 設定線的寬度為 1 個單位
-ctx.lineWidth = 1
-# 將畫筆移動到 (100, 100) 座標點
-ctx.moveTo(100, 100)
-# 然後畫直線到 (150, 200) 座標點
-ctx.lineTo(150, 200)
-# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-ctx.strokeStyle = "blue"
-# 實際執行畫線
-ctx.stroke()
-ctx.closePath()
-&lt;/script&gt;
-
-&lt;p&gt;接著畫四條直線:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-&amp;lt;canvas id="japanflag2" width="600" height="400"&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;script type="text/python"&amp;gt;
-# 導入 doc
-from browser import document as doc
-import math
-
-# 準備繪圖畫布
-canvas = doc["japanflag2"]
-ctx = canvas.getContext("2d")
-
-# 以下可以利用 ctx 物件進行畫圖
-# 因為要畫四條直線, 這裡要將畫直線改寫為函式
-# 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
-def draw_line(x1, y1, x2, y2):
-    global ctx
-    ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    # 將畫筆移動到 (x1, y1) 座標點
-    ctx.moveTo(x1, y1)
-    # 然後畫直線到 (x2, y2) 座標點
-    ctx.lineTo(x2, y2)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    # 實際執行畫線
-    ctx.stroke()
-    ctx.closePath()
-
-# 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
-# 假設從 (10, 10) 畫到 (410, 310) 的外框
-# 先畫兩條水平線
-draw_line(10, 10, 410, 10)
-draw_line(10, 310, 410, 310)
-# 再畫兩條垂直線
-draw_line(10, 10, 10, 310)
-draw_line(410, 10, 410, 310)
-&amp;lt;/script&amp;gt;
-&lt;/pre&gt;
-
-&lt;canvas id="japanflag2" width="600" height="350"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python"&gt;
-# 導入 doc
-from browser import document as doc
-import math
-
-# 準備繪圖畫布
-canvas = doc["japanflag2"]
-ctx = canvas.getContext("2d")
-
-# 以下可以利用 ctx 物件進行畫圖
-# 因為要畫四條直線, 這裡要將畫直線改寫為函式
-# 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
-def draw_line(x1, y1, x2, y2):
-    global ctx
-    ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    # 將畫筆移動到 (x1, y1) 座標點
-    ctx.moveTo(x1, y1)
-    # 然後畫直線到 (x2, y2) 座標點
-    ctx.lineTo(x2, y2)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    # 實際執行畫線
-    ctx.stroke()
-    ctx.closePath()
-
-# 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
-# 假設從 (10, 10) 畫到 (410, 310) 的外框
-# 先畫兩條水平線
-draw_line(10, 10, 410, 10)
-draw_line(10, 310, 410, 310)
-# 再畫兩條垂直線
-draw_line(10, 10, 10, 310)
-draw_line(410, 10, 410, 310)
-&lt;/script&gt;
-
-&lt;p&gt;接著在四條直線中央畫一個圓:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-&amp;lt;canvas id="japanflag3" width="650" height="450"&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;script type="text/python"&amp;gt;
-from browser import document
-import math
-
-# 準備繪圖畫布
-canvas = document["japanflag3"]
-ctx = canvas.getContext("2d")
-
-# 以下可以利用 ctx 物件進行畫圖
-# 因為要畫四條直線, 這裡要將畫直線改寫為函式
-# 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
-def draw_line(x1, y1, x2, y2):
-    global ctx
-    ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    # 將畫筆移動到 (x1, y1) 座標點
-    ctx.moveTo(x1, y1)
-    # 然後畫直線到 (x2, y2) 座標點
-    ctx.lineTo(x2, y2)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    # 實際執行畫線
-    ctx.stroke()
-    ctx.closePath()
-
-# 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
-# 假設從 (10, 10) 畫到 (410, 310) 的外框
-# 先畫兩條水平線
-draw_line(10, 10, 410, 10)
-draw_line(10, 310, 410, 310)
-# 再畫兩條垂直線
-draw_line(10, 10, 10, 310)
-draw_line(410, 10, 410, 310)
-
-# 以下要在框線中央畫一個圓, 設半徑為 80
-# context.arc(x,y,r,sAngle,eAngle,counterclockwise)
-# arc(圓心 x, 圓心 y, 起始角, 終點角, 是否逆時鐘轉)
-circle_x = 10 + 400/2
-circle_y = 10 + 300/2
-
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, 80, 0, math.pi*2, True)
-# 設線顏色為紅色
-ctx.strokeStyle = 'rgb(255, 0, 0)'
-ctx.stroke()
-# 填色設為紅色
-ctx.fillStyle = 'rgb(255, 0, 0)'
-ctx.fill()
-ctx.closePath()
-&amp;lt;/script&amp;gt;
-&lt;/pre&gt;
-
-&lt;canvas id="japanflag3" width="650" height="450"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python"&gt;
-from browser import document
-import math
-
-# 準備繪圖畫布
-canvas = document["japanflag3"]
-ctx = canvas.getContext("2d")
-
-# 以下可以利用 ctx 物件進行畫圖
-# 因為要畫四條直線, 這裡要將畫直線改寫為函式
-# 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
-def draw_line(x1, y1, x2, y2):
-    global ctx
-    ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    # 將畫筆移動到 (x1, y1) 座標點
-    ctx.moveTo(x1, y1)
-    # 然後畫直線到 (x2, y2) 座標點
-    ctx.lineTo(x2, y2)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    # 實際執行畫線
-    ctx.stroke()
-    ctx.closePath()
-
-# 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
-# 假設從 (10, 10) 畫到 (410, 310) 的外框
-# 先畫兩條水平線
-draw_line(10, 10, 410, 10)
-draw_line(10, 310, 410, 310)
-# 再畫兩條垂直線
-draw_line(10, 10, 10, 310)
-draw_line(410, 10, 410, 310)
-
-# 以下要在框線中央畫一個圓, 設半徑為 80
-# context.arc(x,y,r,sAngle,eAngle,counterclockwise)
-# arc(圓心 x, 圓心 y, 起始角, 終點角, 是否逆時鐘轉)
-circle_x = 10 + 400/2
-circle_y = 10 + 300/2
-
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, 80, 0, math.pi*2, True)
-# 設線顏色為紅色
-ctx.strokeStyle = 'rgb(255, 0, 0)'
-ctx.stroke()
-# 填色設為紅色
-ctx.fillStyle = 'rgb(255, 0, 0)'
-ctx.fill()
-ctx.closePath()
-&lt;/script&gt;
-
-&lt;p&gt;然後將各繪圖模組寫成函式:&lt;/p&gt;
-&lt;pre class="brush: python"&gt;
-&amp;lt;canvas id="japanflag4" width="650" height="450"&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;script type="text/python"&amp;gt;
-# 導入 doc
-from browser import document as doc
-import math
-
-# 準備繪圖畫布
-canvas = doc["japanflag4"]
-ctx = canvas.getContext("2d")
-
-# 以下可以利用 ctx 物件進行畫圖
-# 因為要畫四條直線, 這裡要將畫直線改寫為函式
-# 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
-def draw_line(ctx, x1, y1, x2, y2):
-    ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    # 將畫筆移動到 (x1, y1) 座標點
-    ctx.moveTo(x1, y1)
-    # 然後畫直線到 (x2, y2) 座標點
-    ctx.lineTo(x2, y2)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    # 實際執行畫線
-    ctx.stroke()
-    ctx.closePath()
-
-
-# 將外框線寫成函式, 寬為高的 3/2 倍
-# 因為 draw_frame 函式呼叫 draw_line() 因此要在其後定義
-def draw_frame(ctx, x, y, w):
-    # 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
-    # 假設從 (x, y) 畫到 (410, 310) 的外框
-    # 先畫兩條水平線
-    draw_line(ctx, x, y, w*3/2+x, y)
-    draw_line(ctx, x, w+y, w*3/2+x, w+y)
-    # 再畫兩條垂直線
-    draw_line(ctx, x, y, x, w+y)
-    draw_line(ctx, w*3/2+x, y, w*3/2+x, w+y)
-
-def draw_circle(x, y, r, fill=None):
-    global ctx
-    ctx.beginPath()
-    ctx.arc(x, y, r, 0, math.pi*2, True)
-    if fill == None:
-        ctx.fillStyle = 'rgb(255, 0, 0)'
-        ctx.fill()
-    else:
-        ctx.strokeStyle = "rgb(255, 0, 0)"
-        ctx.stroke()
-    ctx.closePath()
-
-# 呼叫 draw_frame()
-width = 400
-draw_frame(ctx, 10, 10, width)
-# 計算框的中心點座標
-x_center = 10 + width*3/2/2
-y_center = 10 + width/2
-# 中間圓的直徑為寬的 3/5
-radius = width*3/5/2
-draw_circle(x_center, y_center, radius)
-&amp;lt;/script&amp;gt;
-&lt;/pre&gt;
-
-&lt;canvas id="japanflag4" width="650" height="450"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python"&gt;
-# 導入 doc
-from browser import document as doc
-import math
-
-# 準備繪圖畫布
-canvas = doc["japanflag4"]
-ctx = canvas.getContext("2d")
-
-# 以下可以利用 ctx 物件進行畫圖
-# 因為要畫四條直線, 這裡要將畫直線改寫為函式
-# 定義畫直線的函式, 以 (x1, y1) 為起點, 畫到 (x2, y2)
-def draw_line(ctx, x1, y1, x2, y2):
-    ctx.beginPath()
-    # 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    # 將畫筆移動到 (x1, y1) 座標點
-    ctx.moveTo(x1, y1)
-    # 然後畫直線到 (x2, y2) 座標點
-    ctx.lineTo(x2, y2)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    # 實際執行畫線
-    ctx.stroke()
-    ctx.closePath()
-
-
-# 將外框線寫成函式, 寬為高的 3/2 倍
-# 因為 draw_frame 函式呼叫 draw_line() 因此要在其後定義
-def draw_frame(ctx, x, y, w):
-    # 準備呼叫 draw_line() 四次以便畫出國旗外框四條線
-    # 假設從 (x, y) 畫到 (410, 310) 的外框
-    # 先畫兩條水平線
-    draw_line(ctx, x, y, w*3/2+x, y)
-    draw_line(ctx, x, w+y, w*3/2+x, w+y)
-    # 再畫兩條垂直線
-    draw_line(ctx, x, y, x, w+y)
-    draw_line(ctx, w*3/2+x, y, w*3/2+x, w+y)
-
-def draw_circle(x, y, r, fill=None):
-    global ctx
-    ctx.beginPath()
-    ctx.arc(x, y, r, 0, math.pi*2, True)
-    if fill == None:
-        ctx.fillStyle = 'rgb(255, 0, 0)'
-        ctx.fill()
-    else:
-        ctx.strokeStyle = "rgb(255, 0, 0)"
-        ctx.stroke()
-    ctx.closePath()
-
-# 呼叫 draw_frame()
-width = 400
-draw_frame(ctx, 10, 10, width)
-# 計算框的中心點座標
-x_center = 10 + width*3/2/2
-y_center = 10 + width/2
-# 中間圓的直徑為寬的 3/5
-radius = width*3/5/2
-draw_circle(x_center, y_center, radius)
-&lt;/script&gt;
-
-&lt;p&gt;接下來畫中華民國國旗:&lt;/p&gt;
-&lt;canvas id="rocflag" width="650" height="450"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-# 導入 doc
-from browser import document as doc
-import math
-
-# 準備繪圖畫布
-canvas = doc["rocflag"]
-ctx = canvas.getContext("2d")
-# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
-# 以下採用 canvas 原始座標繪圖
-flag_w = canvas.width
-flag_h = canvas.height
-circle_x = flag_w/4
-circle_y = flag_h/4
-# 先畫滿地紅
-ctx.fillStyle='rgb(255, 0, 0)'
-ctx.fillRect(0,0,flag_w,flag_h)
-# 再畫青天
-ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(0,0,flag_w/2,flag_h/2)
-# 畫十二道光芒白日
-ctx.beginPath()
-star_radius = flag_w/8
-angle = 0
-for i in range(24):
-    angle += 5*math.pi*2/12
-    toX = circle_x + math.cos(angle)*star_radius
-    toY = circle_y + math.sin(angle)*star_radius
-    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
-    if (i):
-        ctx.lineTo(toX, toY)
-    else:
-        ctx.moveTo(toX, toY)
-ctx.closePath()
-# 將填色設為白色
-ctx.fillStyle = '#fff'
-ctx.fill()
-# 白日:藍圈
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
-ctx.closePath()
-# 填色設為藍色
-ctx.fillStyle = 'rgb(0, 0, 149)'
-ctx.fill()
-# 白日:白心
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
-ctx.closePath()
-# 填色設為白色
-ctx.fillStyle = '#fff'
-ctx.fill()
-&lt;/script&gt;
-
-&lt;pre class="brush: python"&gt;
-&amp;lt;canvas id="rocflag" width="650" height="450"&amp;gt;&amp;lt;/canvas&amp;gt;
-&amp;lt;script type="text/python3"&amp;gt;
-# 導入 doc
-from browser import document as doc
-import math
-
-# 準備繪圖畫布
-canvas = doc["rocflag"]
-ctx = canvas.getContext("2d")
-# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
-# 以下採用 canvas 原始座標繪圖
-flag_w = canvas.width
-flag_h = canvas.height
-circle_x = flag_w/4
-circle_y = flag_h/4
-# 先畫滿地紅
-ctx.fillStyle='rgb(255, 0, 0)'
-ctx.fillRect(0,0,flag_w,flag_h)
-# 再畫青天
-ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(0,0,flag_w/2,flag_h/2)
-# 畫十二道光芒白日
-ctx.beginPath()
-star_radius = flag_w/8
-angle = 0
-for i in range(24):
-    angle += 5*math.pi*2/12
-    toX = circle_x + math.cos(angle)*star_radius
-    toY = circle_y + math.sin(angle)*star_radius
-    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
-    if (i):
-        ctx.lineTo(toX, toY)
-    else:
-        ctx.moveTo(toX, toY)
-ctx.closePath()
-# 將填色設為白色
-ctx.fillStyle = '#fff'
-ctx.fill()
-# 白日:藍圈
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
-ctx.closePath()
-# 填色設為藍色
-ctx.fillStyle = 'rgb(0, 0, 149)'
-ctx.fill()
-# 白日:白心
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
-ctx.closePath()
-# 填色設為白色
-ctx.fillStyle = '#fff'
-ctx.fill()
-&amp;lt;/script&amp;gt;
-&lt;/pre&gt;</summary><category term="使用導引"></category><category term="創造力"></category><category term="表達能力"></category><category term="協同設計"></category></entry></feed>
+&lt;/script&gt;</summary><category term="使用導引"></category></entry></feed>

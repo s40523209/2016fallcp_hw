@@ -173,12 +173,12 @@
 <v t="leo.20161219141515.1"><vh>@edit 20161219.md</vh></v>
 <v t="leo.20161226131333.1"><vh>@edit 20161226.md</vh></v>
 <v t="leo.20170109132441.1"><vh>@edit 20170109.md</vh></v>
-</v>
-</v>
-</v>
 <v t="amd.20160106094754.1"><vh>@path ./../content/pages</vh>
 <v t="amd.20160106094829.1" a="E"><vh>yen 所寫的 pages 文章</vh>
 <v t="amd.20160106094844.1"><vh>@edit pages_1.md</vh></v>
+</v>
+</v>
+</v>
 </v>
 </v>
 <v t="amd.20161004202833.1"><vh>@edit ../README.md</vh></v>
